@@ -1,0 +1,26 @@
+drupalUsername: admin 
+drupalEmail: admin@example.com 
+mariadb:
+  db:
+    name: "my-database"
+persistence:
+  ## @param persistence.enabled Enable persistence using PVC
+  ##
+  enabled: false
+  ## @param persistence.storageClass PVC Storage Class for Drupal volume
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  storageClass: ""
+  ## @param persistence.accessModes PVC Access Mode for Drupal volume
+  ## Requires persistence.enabled: true
+  ## If defined, PVC must be created manually before volume will be bound
+  ##
+  accessModes:
+    - ReadWriteOnce
+  ## @param persistence.size PVC Storage Request for Drupal volume
+  ##
+  size: 1Gi
