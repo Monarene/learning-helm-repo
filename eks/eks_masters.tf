@@ -57,7 +57,6 @@ resource "aws_security_group_rule" "demo-cluster-ingress-workstation-https" {
 resource "aws_eks_cluster" "sandbox" {
   name            = var.cluster_name
   role_arn        = aws_iam_role.cluster_role.arn
-  version         = "1.25"
 
   vpc_config {
     security_group_ids = [aws_security_group.cluster_sg.id]
