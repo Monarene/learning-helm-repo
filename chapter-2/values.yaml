@@ -6,7 +6,7 @@ mariadb:
 persistence:
   ## @param persistence.enabled Enable persistence using PVC
   ##
-  enabled: false
+  enabled: true
   ## @param persistence.storageClass PVC Storage Class for Drupal volume
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -14,7 +14,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: ""
+  storageClass: "helm-storage"
   ## @param persistence.accessModes PVC Access Mode for Drupal volume
   ## Requires persistence.enabled: true
   ## If defined, PVC must be created manually before volume will be bound
@@ -23,4 +23,4 @@ persistence:
     - ReadWriteOnce
   ## @param persistence.size PVC Storage Request for Drupal volume
   ##
-  size: 1Gi
+  size: 2Gi
