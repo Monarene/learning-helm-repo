@@ -24,5 +24,5 @@ variable "author" {
 variable "cluster_name" {
   type = string
   description = "EKS cluster name"
-  default     = "test-helm"
+  default     = "article-helm"
 }
